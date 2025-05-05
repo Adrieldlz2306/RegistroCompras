@@ -200,30 +200,40 @@
   </div>
 
   <script>
-   async function buscarClientePorDNI(dni) {
-  try {
-    const url = 'https://script.google.com/macros/s/AKfycbzIIeUynyCx9afcAOsa2HRUDAV_vWTf6o20CDkYwDI8KIi3joo0gWLWPU0xyWZLaravGg/exec?dni=' + dni;
-    const response = await fetch(url);
+    async function buscarClientePorDNI(dni) {
+      try {
+        const url = 'https://script.google.com/macros/s/AKfycbwBR0HA82yReeb1t9W7x4xq1YQ7ZnWlIhutgCSFBksmow1MWmUmaZj0UBsqC-3MJfX1Ng/exec?dni=' + dni;
+        const response = await fetch(url);
 
-    if (!response.ok) {
-      throw new Error('Error al obtener los datos');
+        if (!response.ok) {
+          throw new Error('Error al obtener los datos');
+        }
+
+        const data = await response.json();
+
+        if (data.error) {
+          alert('Cliente no encontrado');
+          document.getElementById('nombre').value = '';
+          document.getElementById('telefono').value = '';
+        } else {
+          document.getElementById('nombre').value = data["Nombre y apellidos"];
+          document.getElementById('telefono').value = data["Teléfono"];
+        }
+      } catch (error) {
+        console.error('Error en la búsqueda:', error);
+        alert('No se pudo conectar con la base de datos.');
+      }
     }
 
-    const data = await response.json();
-
-    if (data.error) {
-      alert('Cliente no encontrado');
-      document.getElementById('nombre').value = '';
-      document.getElementById('telefono').value = '';
-    } else {
-      document.getElementById('nombre').value = data["Nombre y apellidos"];
-      document.getElementById('telefono').value = data["Teléfono"];
-    }
-  } catch (error) {
-    console.error('Error en la búsqueda:', error);
-    alert('No se pudo conectar con la base de datos.');
-  }
-}
+    document.addEventListener('DOMContentLoaded', () => {
+      const dniInput = document.getElementById('dni');
+      dniInput.addEventListener('blur', () => {
+        const dni = dniInput.value.trim();
+        if (dni.length >= 6) {
+          buscarClientePorDNI(dni);
+        }
+      });
+    });
   </script>
 </body>
 </html>
