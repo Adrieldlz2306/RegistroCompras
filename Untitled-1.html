@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro de compra</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f0f4f7, #d9e4ec);
+      padding: 20px;
+      color: #333;
+    }
+
+    .form-container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .checkbox-group {
+      margin-bottom: 15px;
+    }
+
+    .checkbox-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: normal;
+    }
+
+    .section-title {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #34495e;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    button {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2471a3;
+    }
+
+    img {
+      display: block;
+      max-width: 200px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Registro de compra</h1>
+
+    <form>
+      <div class="form-group">
+        <label for="dni">DNI</label>
+        <input type="text" id="dni" name="dni" required />
+      </div>
+
+      <div class="form-group">
+        <label for="nombre">Nombre y apellidos</label>
+        <input type="text" id="nombre" name="nombre" required />
+      </div>
+
+      <div class="form-group">
+        <label for="telefono">Número de teléfono</label>
+        <input type="tel" id="telefono" name="telefono" required />
+      </div>
+
+      <h2>LISTA DE PRODUCTOS</h2>
+      <img src="https://via.placeholder.com/200x120?text=Productos" alt="Productos">
+
+      <div class="section-title">PRODUCTOS PARA PISO</div>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="productos" value="Cera amarilla"> Cera amarilla</label>
+        <label><input type="checkbox" name="productos" value="Cera blanca"> Cera blanca</label>
+        <label><input type="checkbox" name="productos" value="Cera roja"> Cera roja</label>
+      </div>
+
+      <div class="section-title">PARA VIDRIOS</div>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="productos" value="Limpiavidrio"> Limpiavidrio</label>
+      </div>
+
+      <div class="section-title">DESINFECTANTES</div>
+      <div class="checkbox-group">
+        <label><input type="checkbox" value="Quita sarro"> Quita sarro</label>
+        <label><input type="checkbox" value="Ácido muriático"> Ácido muriático</label>
+        <label><input type="checkbox" value="Lejía blanca"> Lejía blanca</label>
+        <label><input type="checkbox" value="Kreso"> Kreso</label>
+        <label><input type="checkbox" value="Pino verde"> Pino verde</label>
+        <label><input type="checkbox" value="Pino limón"> Pino limón</label>
+      </div>
+
+      <div class="section-title">AMBIENTADORES</div>
+      <div class="checkbox-group">
+        <label><input type="checkbox" value="Fresa"> Fresa</label>
+        <label><input type="checkbox" value="Lavanda"> Lavanda</label>
+        <label><input type="checkbox" value="Buqué"> Buqué</label>
+        <label><input type="checkbox" value="Violeta"> Violeta</label>
+        <label><input type="checkbox" value="Floral"> Floral</label>
+        <label><input type="checkbox" value="Manzana"> Manzana</label>
+        <label><input type="checkbox" value="Limón"> Limón</label>
+      </div>
+
+      <div class="section-title">DESGRASANTES</div>
+      <div class="checkbox-group">
+        <label><input type="checkbox" value="Limpia todo"> Limpia todo</label>
+        <label><input type="checkbox" value="Quita grasa"> Quita grasa</label>
+      </div>
+
+      <div class="section-title">CUIDADO DE ROPA</div>
+      <div class="checkbox-group">
+        <label><input type="checkbox" value="Detergente"> Detergente</label>
+        <label><input type="checkbox" value="Lejía color"> Lejía color</label>
+        <label><input type="checkbox" value="Suavizante"> Suavizante</label>
+      </div>
+
+      <div class="section-title">PROTECCIÓN Y BRILLO</div>
+      <div class="checkbox-group">
+        <label><input type="checkbox" value="Silicona"> Silicona</label>
+      </div>
+
+      <div class="section-title">CUIDADO DE LAVAVAJILLA</div>
+      <div class="checkbox-group">
+        <label><input type="checkbox" value="Lavavajilla"> Lavavajilla</label>
+      </div>
+
+      <div class="form-group">
+        <label for="fecha">Fecha estimada de entrega:</label>
+        <select id="fecha" name="fecha">
+          <option>Martes</option>
+          <option>Miércoles</option>
+          <option>Viernes</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="metodo">Método de pago:</label>
+        <select id="metodo" name="metodo">
+          <option>Al contado</option>
+          <option>En partes</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="forma">Forma de pago:</label>
+        <select id="forma" name="forma">
+          <option>Yape</option>
+          <option>Transferencia</option>
+          <option>Efectivo</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="valor">Valor del pago por partes:</label>
+        <input type="text" id="valor" name="valor" />
+      </div>
+
+      <button type="submit">Enviar pedido</button>
+    </form>
+  </div>
+
+  <script>
+    async function buscarClientePorDNI(dni) {
+      try {
+        const url = 'https://script.google.com/macros/s/AKfycbzIIeUynyCx9afcAOsa2HRUDAV_vWTf6o20CDkYwDI8KIi3joo0gWLWPU0xyWZLaravGg/exec' + dni;
+        const response = await fetch(url);
+
+        if (!response.ok) {
+          throw new Error('Error al obtener los datos');
+        }
+
+        const data = await response.json();
+
+        if (data.error) {
+          alert('Cliente no encontrado');
+          document.getElementById('nombre').value = '';
+          document.getElementById('telefono').value = '';
+        } else {
+          document.getElementById('nombre').value = data["Nombre y apellidos"];
+          document.getElementById('telefono').value = data["Teléfono"];
+        }
+      } catch (error) {
+        console.error('Error en la búsqueda:', error);
+        alert('No se pudo conectar con la base de datos.');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const dniInput = document.getElementById('dni');
+      dniInput.addEventListener('blur', () => {
+        const dni = dniInput.value.trim();
+        if (dni.length >= 6) {
+          buscarClientePorDNI(dni);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
